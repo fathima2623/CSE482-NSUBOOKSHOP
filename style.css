@@ -24,3 +24,7 @@ li a:hover {
   .active {
     background-color: #4CAF50;
   }
+
+h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
