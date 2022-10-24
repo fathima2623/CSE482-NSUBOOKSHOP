@@ -2,7 +2,7 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    background-color: navy;
+    background-color: #63ace5;
     border: 1px solid black;
     overflow: hidden;
 }
@@ -18,7 +18,7 @@ li{
 }
 
 li a:hover {
-    background-color: #111;
+    background-color:white;
   }
   
   .active {
