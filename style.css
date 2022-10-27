@@ -344,3 +344,65 @@ footer {
 footer p{
  padding-top: 60px;
 }
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+
+  section nav .logo img{
+    display: none;
+  }
+
+  .main_tag{
+    display: block;
+    width: 100%;
+  }
+
+  section nav ul li {
+    display: block;
+    margin-right: 160px;
+    padding-top: 5px;
+    
+    
+  }
+
+  section nav ul{
+    list-style: circle;
+    justify-content: space-around;
+    margin-top: 5px;
+  }
+
+  section nav{
+    display: block;
+
+  }
+
+  section .main{
+    display: block;
+  }
+
+  section .main .main_img{
+    padding-top: 130px;
+  }
+
+  section .main .main_tag{
+  padding-top: 30px;
+  }
+
+  .courses .courses_box{
+    display: block;
+    padding-left: 80px;
+    
+  }
+  .courses .courses_box .courses_card{float:none;margin-top: 10px;}
+
+  .courses h1{
+    padding-right: 30px;
+  }
+  
+  footer{
+    clear: left;
+  }
+
+}
