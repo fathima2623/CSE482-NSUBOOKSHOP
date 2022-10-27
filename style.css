@@ -1,189 +1,119 @@
-html, body {
+*{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.header {
-  background-color:black;
+section{
+  width: 100%;
+  height: 100vh;
+  background-image: url(image/bg.png);
+  background-size: cover;
+  background-position: center;
 }
 
-.container {
-  max-width: 940px;
-  margin: 0 auto;
+section nav .logo{
+
+float: left;
+margin-left: 20px;
+}
+
+section nav ul{
+  float: right;
+  margin-top: 40px;
+  margin-right: 20px;
+font-size: large;
+font-weight: bold;}
+
+section nav{
+  width: 100%;
+  display: block;
+ 
+  box-shadow: 0 0 10px #089da1;
+  /* background: #fff; */
+  background:black;
+  position: fixed;
+  left: 0;
+  z-index: 100;
+}
+
+section nav .logo img{
+  width: 100px;
+  cursor: pointer;
+  margin: 8px 0;
+}
+
+section nav ul{
+  list-style: none;
+}
+
+section nav li{
+  display: inline-block;
   padding: 0 10px;
 }
 
-ul {
-<<<<<<< HEAD
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: black;
-=======
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: #63ace5;
-    border: 1px solid black;
-    overflow: hidden;
->>>>>>> 88ff408670babf5d04a53014485ccf629da4a1c0
-}
-
-li {
-  float: right;
-}
-
-<<<<<<< HEAD
-li a {
-  display: block;
+section nav li a{
+  text-decoration: none;
   color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
+section nav li a:hover{
+  color: #089da1;
 }
 
-.active {
-  background-color: #04AA6D;
-}
-
-.jumbotron {
-  background: url(https://cdn.trendhunterstatic.com/thumbs/385/bookstore-design.jpeg?auto=webp);
-  background-size:cover;
-  background-position:center center;
-  background-repeat:no-repeat;
-  height: 800px;
-}
-
-.nav {
-  margin: 0;
-  padding: 20px 0;
-}
-
-.nav li {
-  display:inline;
-  color: #fff;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 12px;
-  text-transform:uppercase;
-  margin-left:10px;
-  margin-right:10px;
-}
-
-.main {
-  position: relative;
-  top: 180px;
-  text-align: center;
-}
-
-.main h1 {
-  color: black;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 70px;
-  margin-top: 0;
-  margin-bottom: 80px;
-  text-transform: uppercase;
-}
-
-.btn-main {
-  background-color: black;
-  color: #fff;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+section nav .social_icon i{
+  margin: 0 5px;
   font-size: 18px;
-  letter-spacing: 1.3px;
-  padding: 16px 40px;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
-.btn-default {
-  color:#333;
-  border:1px solid #333333;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  font-size: 10px;
-  letter-spacing: 1.3px;
+section nav .social_icon i:hover{
+  color: #089da1;
+  cursor: pointer;
+}
+
+section .main{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 10%;
+}
+
+section .main h1{
+  position: relative;
+  font-size: 55px;
+  top: 80px;
+  left: 25px;
+}
+
+section .main h1 span{
+  color: #089da1;
+}
+
+section .main p{
+  width: 650px;
+  text-align: justify;
+  line-height: 22px;
+  position: relative;
+  top: 125px;
+  left: 25px;
+}
+
+section .main .main_tag .main_btn{
+  background: #089da1;
   padding: 10px 20px;
-  text-decoration: none;
-  text-transform: uppercase;  
-  display: inline-block;
-  margin-bottom: 20px; 
-  padding-right:50px;
-  padding-left:50px;
-}
-
-.supporting {
-  padding-top: 80px;
-  padding-bottom: 100px;
-}
-
-.supporting .col {
-  float: left;
-  width: 33%;
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-}
-
-.supporting img {
-  height: 32px;
-}
-
-.supporting h2 {
-  font-weight: 600;
-  font-size: 23px;
-  text-transform: uppercase;
-}
-
-.supporting p {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  padding: 0 50px;
-  margin-bottom: 40px;
-}
-
-.clearfix {
-  clear: both;
-}
-
-.footer {
-  background-color: black;
+  position: relative;
+  top: 200px;
+  left: 25px;
   color: #fff;
-  padding: 30px 0;
+  text-decoration: none;
 }
 
-.footer p {
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
-  font-size: 11px;
+section .main .main_img img{
+  width: 780px;
+  position: relative;
+  top: 90px;
+  left: 20px;
 }
 
-@media (max-width: 500px) {
-  .main h1 {
-    font-size: 50px;
-    padding: 0 40px;
-  }
-
-  .supporting .col {
-    width: 100%;
-  }
-=======
-li a:hover {
-    background-color:white;
-  }
-  
-  .active {
-    background-color: #4CAF50;
-  }
-
-h2{
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
->>>>>>> 88ff408670babf5d04a53014485ccf629da4a1c0
-}
