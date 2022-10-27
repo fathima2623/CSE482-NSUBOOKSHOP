@@ -14,17 +14,27 @@ html, body {
 }
 
 ul {
+<<<<<<< HEAD
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   background-color: black;
+=======
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #63ace5;
+    border: 1px solid black;
+    overflow: hidden;
+>>>>>>> 88ff408670babf5d04a53014485ccf629da4a1c0
 }
 
 li {
   float: right;
 }
 
+<<<<<<< HEAD
 li a {
   display: block;
   color: white;
@@ -164,4 +174,16 @@ li a:hover:not(.active) {
   .supporting .col {
     width: 100%;
   }
+=======
+li a:hover {
+    background-color:white;
+  }
+  
+  .active {
+    background-color: #4CAF50;
+  }
+
+h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+>>>>>>> 88ff408670babf5d04a53014485ccf629da4a1c0
 }
