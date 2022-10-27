@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+           <img src="https://seeklogo.com/images/N/north-south-university-logo-0CA3A4611D-seeklogo.com.png">
+            <nav>
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="register.html">REGISTER</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                </ul>
+            </nav>
+        </header>
+    <h1>Register</h1>
+
+    <form action="action_page.php" method="post">
+
+  <div class="container">
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="full-name"><b>Name</b></label>
+    <input type="text" placeholder="Enter Full Name" name="full-name" required>
+
+    <label for="contact-num"><b>Contact Number</b></label>
+    <input type="text" placeholder="+880" name="contact-num" required><br>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+    <hr>
+
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
