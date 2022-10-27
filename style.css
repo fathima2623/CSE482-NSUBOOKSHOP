@@ -124,6 +124,7 @@ section .main .main_img img{
   width: 100%;
   height: auto;
   margin: 45px 0;
+  margin-top: 50px;
 }
 
 .services .services_box{
@@ -132,12 +133,13 @@ section .main .main_img img{
   display: flex;
   align-items: center;
   justify-content: space-around;
+  height: 300px;
 }
 
 .services .services_box .services_card{
   text-align: center;
   width: 310px;
-  height: auto;
+  height: 200px;
   box-shadow: 0 0 8px #089da1;
   padding: 15px 10px;
 }
@@ -197,10 +199,12 @@ section .main .main_img img{
 
 .featured_boks .featured_book_box .featured_book_card .featurde_book_tag h2{
   margin: 12px;
+  font-size: small;
 }
 
 .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .writer{
   color: #919191;
+  font-size: small;
 }
 
 .featured_boks .featured_book_box .featured_book_card .featurde_book_tag .categories{
@@ -238,4 +242,105 @@ section .main .main_img img{
 ::-webkit-scrollbar-thumb{
   background: #089da1;
   border-radius: 10px;
+}
+
+/*arrivals*/
+
+.courses{
+  width: 100%;
+  height: auto;
+  margin-bottom: 35px;
+}
+
+.courses h1{
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+
+
+.courses .courses_box{
+  width: 95%;
+  margin: 0 auto;
+  display: grid;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 25px 0;
+}
+
+.courses .courses_box .courses_card{
+  width: 250px;
+  height: 350px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #919191;
+  margin: auto 20px;
+}
+
+.courses .courses_box .courses_card:hover{
+  box-shadow: 0 0 5px #089da1;
+}
+
+.courses .courses_box .courses_card .courses_image{
+  width: 150px;
+  height: 220px;
+  margin: 0 auto;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+
+.courses .courses_box .courses_card .courses_image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.3s;
+}
+
+.courses .courses_box .courses_card:hover .courses_image img{
+  transform: scale(1.1);
+}
+
+.courses .courses_box .courses_card .courses_tag p{
+  font-family: queen of camelot;
+  font-size: 20px;
+  margin: 8px 0;
+  margin-bottom: 15px;
+  
+}
+
+.courses .courses_box .courses_card .courses_tag H3{
+  font-family: queen of camelot;
+  font-size: 15px;
+  margin: 8px 0;
+  margin-bottom: 8px;
+  
+}
+
+
+.courses .courses_box .courses_card .courses_tag .courses_btn{
+  padding: 8px 20px;
+ 
+  border: 2px solid #089da1;
+  text-decoration: none;
+  color: #000;
+}
+
+.courses .courses_box .courses_card .courses_tag .courses_btn a{
+margin-top: 5px;
+}
+
+
+footer {
+  text-align: center;
+  
+  background-color: grey;
+  color: white;
+  height: 150px;
+}
+
+footer p{
+ padding-top: 60px;
 }
