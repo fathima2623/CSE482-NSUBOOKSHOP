@@ -352,48 +352,57 @@ footer p{
 }
 
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: lightblue;
-  }
+  
 
-  section nav .logo img{
+  section nav .logo span{
     display: none;
   }
 
-  .main_tag{
+  section {
     display: block;
     width: 100%;
-  }
-
-  section nav ul li {
-    display: block;
-    margin-right: 160px;
-    padding-top: 5px;
-    
-    
-  }
-
-  section nav ul{
-    list-style: circle;
-    justify-content: space-around;
-    margin-top: 5px;
+    height: 500px;
   }
 
   section nav{
-    display: block;
-
+    position: relative;
   }
+  section nav .logo, section nav ul, section nav li{
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  
+  section nav li{
+    border: 1px solid white;
+  }
+
+  section nav li a:hover{
+    color: #089da1;
+  }
+
 
   section .main{
     display: block;
+    width: 100%;
+    margin: 0;;
   }
 
-  section .main .main_img{
-    padding-top: 130px;
+  section .main .main_img img{
+    padding-top: 200px;
+    float: none;
+    width: 100%;
+    margin: 0;;
+    
   }
 
   section .main .main_tag{
-  padding-top: 30px;
+    float: none;
+    width: 100%;
+    margin: 0;
   }
 
   .courses .courses_box{
@@ -411,4 +420,11 @@ footer p{
     clear: left;
   }
 
+  .services{
+    display: block;
+    float: none;
+    width: 100%;
+    margin:0px;
+    margin-top: 900px;
+  }
 }

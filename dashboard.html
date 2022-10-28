@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+          }
+                    
+                    
+          section{
+            width: 100%;
+            height: 110px;
+            background-image: url(image/bg.png);
+            background-size: cover;
+            background-position: center;
+          }
+          
+          section nav .logo{
+          
+          float: left;
+          margin-left: 20px;
+          }
+          
+          section nav ul{
+            float: right;
+            margin-top: 40px;
+            margin-right: 20px;
+          font-size: large;
+          font-weight: bold;}
+          
+          section nav{
+            width: 100%;
+            display: block;
+           
+            box-shadow: 0 0 10px #089da1;
+            /* background: #fff; */
+            background:black;
+            position: fixed;
+            left: 0;
+            z-index: 100;
+          }
+          
+          section nav .logo img{
+            width: 100px;
+            cursor: pointer;
+            margin: 8px 0;
+          }
+          
+          section nav ul{
+            list-style: none;
+          }
+          
+          section nav li{
+            display: inline-block;
+            padding: 0 10px;
+          }
+          
+          section nav li a{
+            text-decoration: none;
+            color: white;
+          }
+          
+          section nav li a:hover{
+            color: #089da1;}
+
+            .featured_boks{
+  width: 100%;
+  height: 100vh;
+  padding: 160px 0;
+}
+
+.featured_boks h1{
+  display: flex;
+  align-items:flex-end;
+  justify-content: left;
+  margin-bottom: 30px;
+  font-size: 45px;
+  margin-left: 50px;
+}
+
+.featured_boks .featured_book_box{
+  width: 95%;
+  height: 60vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+.featured_boks .featured_book_box .featured_book_card{
+  width: 250px;
+  height: 420px;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #919191;
+  margin: auto 20px;
+}
+
+.featured_boks .featured_book_box .featured_book_card:hover{
+  box-shadow: 0 0 5px #089da1;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_img img{
+  width: 150px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag h2{
+  margin: 12px;
+  font-size: small;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .writer{
+  color: #919191;
+  font-size: small;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .categories{
+  color: #089da1;
+  margin-top: 8px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price{
+  margin-top: 8px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .book_price sub{
+  font-weight: 100;
+  padding: 0 5px;
+}
+
+.featured_boks .featured_book_box .featured_book_card .featurde_book_tag .f_btn{
+  padding: 8px 20px;
+  border: 2px solid #089da1;
+  text-decoration: none;
+  color: #000;
+}
+            @media screen and (max-width: 600px) {
+  
+  section {
+    display: block;
+    width: 100%;
+    height: 500px;
+  }
+
+  section nav{
+    position: relative;
+  }
+  section nav .logo, section nav ul, section nav li{
+    float: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  
+  section nav li{
+    border: 1px solid white;
+  }
+
+  section nav li a:hover{
+    color: #089da1;
+  } }
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+
+            <div class="logo">
+                <img src="Logo.png">
+            </div>
+    
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="checkout.html"></a>Cart</li>
+                <li><a href="Wishlist.html"></a>Wishlist</li>
+            </ul>
+    
+        </nav>
+
+        <!-- <div class="">
+
+
+        </div> -->
+
+        <div class="featured_boks">
+
+          <h1>New added books!</h1>
+          <div class="featured_book_box">
+              <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/02-4.jpg">
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2>Writing your journal article in twelve weeks</h2>
+                      <p class="writer">Wendy Laura Belcher</p>
+                      <div class="categories">Educational</div>
+                      <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                      <a href="product.html" class="f_btn">Learn More</a>
+                  </div>
+  
+              </div>
+  
+              <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/05-5.jpg">
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2>The trial of the Kaiser</h2>
+                      <p class="writer">William A. Schabas</p>
+                      <div class="categories">Educational</div>
+                      <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                      <a href="#" class="f_btn">Learn More</a>
+                  </div>
+  
+              </div>
+  
+              <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img src="https://library.northsouth.edu/wp-content/uploads/2020/12/01-2.jpg">
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2>The Routledge handbook of English language education</h2>
+                      <p class="writer">Shaila Sultana</p>
+                      <div class="categories">Educational</div>
+                      <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                      <a href="#" class="f_btn">Learn More</a>
+                  </div>
+  
+              </div>
+  
+              <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/06.png">
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2>Research methods in education</h2>
+                      <p class="writer">Louis Cohen, Lawrence Manion and Keith Morrison</p>
+                      <div class="categories">Educational</div>
+                      <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                      <a href="#" class="f_btn">Learn More</a>
+                  </div>
+  
+              </div>
+  
+              <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/04-4.jpg">
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2>Imperialism, sovereignty, and the making of international law</h2>
+                      <p class="writer"> Antony Anghie.</p>
+                      <div class="categories">Educational</div>
+                      <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                      <a href="#" class="f_btn">Learn More</a>
+                  </div>
+  
+              </div>
+  
+              <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img
+                          src="https://www.lgdj.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/corporate-governance-after-the-financial-crisis-9780190496678.jpg">
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2>Corporate Governance After the Financial Crisis</h2>
+                      <p class="writer">Stephen Bainbridge</p>
+                      <div class="categories">Educational</div>
+                      <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                      <a href="#" class="f_btn">Learn More</a>
+                  </div>
+  
+              </div>
+  
+  
+  
+          </div>
+  
+      </div>
+
+      <div class="featured_boks">
+
+        <h1>Search books by your courses</h1>
+        <div class="featured_book_box">
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/02-4.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Writing your journal article in twelve weeks</h2>
+                    <p class="writer">Wendy Laura Belcher</p>
+                    <div class="categories">Educational</div>
+                    <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                    <a href="product.html" class="f_btn">Learn More</a>
+                </div>
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/05-5.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>The trial of the Kaiser</h2>
+                    <p class="writer">William A. Schabas</p>
+                    <div class="categories">Educational</div>
+                    <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="https://library.northsouth.edu/wp-content/uploads/2020/12/01-2.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>The Routledge handbook of English language education</h2>
+                    <p class="writer">Shaila Sultana</p>
+                    <div class="categories">Educational</div>
+                    <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/06.png">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Research methods in education</h2>
+                    <p class="writer">Louis Cohen, Lawrence Manion and Keith Morrison</p>
+                    <div class="categories">Educational</div>
+                    <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/04-4.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Imperialism, sovereignty, and the making of international law</h2>
+                    <p class="writer"> Antony Anghie.</p>
+                    <div class="categories">Educational</div>
+                    <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+
+            </div>
+
+            <div class="featured_book_card">
+
+                <div class="featurde_book_img">
+                    <img
+                        src="https://www.lgdj.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/corporate-governance-after-the-financial-crisis-9780190496678.jpg">
+                </div>
+
+                <div class="featurde_book_tag">
+                    <h2>Corporate Governance After the Financial Crisis</h2>
+                    <p class="writer">Stephen Bainbridge</p>
+                    <div class="categories">Educational</div>
+                    <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="featured_boks">
+
+      <h1>Featured Books</h1>
+      <div class="featured_book_box">
+          <div class="featured_book_card">
+
+              <div class="featurde_book_img">
+                  <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/02-4.jpg">
+              </div>
+
+              <div class="featurde_book_tag">
+                  <h2>Writing your journal article in twelve weeks</h2>
+                  <p class="writer">Wendy Laura Belcher</p>
+                  <div class="categories">Educational</div>
+                  <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                  <a href="product.html" class="f_btn">Learn More</a>
+              </div>
+
+          </div>
+
+          <div class="featured_book_card">
+
+              <div class="featurde_book_img">
+                  <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/05-5.jpg">
+              </div>
+
+              <div class="featurde_book_tag">
+                  <h2>The trial of the Kaiser</h2>
+                  <p class="writer">William A. Schabas</p>
+                  <div class="categories">Educational</div>
+                  <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                  <a href="#" class="f_btn">Learn More</a>
+              </div>
+
+          </div>
+
+          <div class="featured_book_card">
+
+              <div class="featurde_book_img">
+                  <img src="https://library.northsouth.edu/wp-content/uploads/2020/12/01-2.jpg">
+              </div>
+
+              <div class="featurde_book_tag">
+                  <h2>The Routledge handbook of English language education</h2>
+                  <p class="writer">Shaila Sultana</p>
+                  <div class="categories">Educational</div>
+                  <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                  <a href="#" class="f_btn">Learn More</a>
+              </div>
+
+          </div>
+
+          <div class="featured_book_card">
+
+              <div class="featurde_book_img">
+                  <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/06.png">
+              </div>
+
+              <div class="featurde_book_tag">
+                  <h2>Research methods in education</h2>
+                  <p class="writer">Louis Cohen, Lawrence Manion and Keith Morrison</p>
+                  <div class="categories">Educational</div>
+                  <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                  <a href="#" class="f_btn">Learn More</a>
+              </div>
+
+          </div>
+
+          <div class="featured_book_card">
+
+              <div class="featurde_book_img">
+                  <img src="https://library.northsouth.edu/wp-content/uploads/2020/10/04-4.jpg">
+              </div>
+
+              <div class="featurde_book_tag">
+                  <h2>Imperialism, sovereignty, and the making of international law</h2>
+                  <p class="writer"> Antony Anghie.</p>
+                  <div class="categories">Educational</div>
+                  <p class="book_price">$25.50<sub><del>$28.60</del></sub></p>
+                  <a href="#" class="f_btn">Learn More</a>
+              </div>
+
+          </div>
+
+          <div class="featured_book_card">
+
+              <div class="featurde_book_img">
+                  <img
+                      src="https://www.lgdj.fr/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/corporate-governance-after-the-financial-crisis-9780190496678.jpg">
+              </div>
+
+              <div class="featurde_book_tag">
+                  <h2>Corporate Governance After the Financial Crisis</h2>
+                  <p class="writer">Stephen Bainbridge</p>
+                  <div class="categories">Educational</div>
+                  <p class="book_price">100tk<sub><del>150tk</del></sub></p>
+                  <a href="#" class="f_btn">Learn More</a>
+              </div>
+
+          </div>
+
+
+
+      </div>
+
+  </div>
+
+       
+    </section>
+</body>
+</html>
