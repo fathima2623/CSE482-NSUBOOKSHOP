@@ -1,0 +1,113 @@
+body {
+    overflow: hidden;
+}
+
+/* Signup Form */
+.signup-form {
+  background-color: #e8e9ec;
+  width: 500px;
+  margin: 50px auto;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+    flex-direction: column;
+  border-radius: 4px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* signup form header */
+.signup-form h1 {
+  padding: 35px 35px 0 35px;
+  color: black;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+/* Signup form content */
+.signup-form .content {
+  padding: 35px;
+  text-align: center;
+}
+
+.signup-form .input-field {
+  padding: 12px 5px;
+}
+
+.signup-form .input-field input {
+  font-size: 16px;
+  display: block;
+  font-family: 'Roboto';
+  width: 100%;
+  padding: 10px 1px;
+  border: 0;
+  border-radius: 4px;
+  border-bottom: 1px solid #747474;
+  outline: none;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+/* Login Text Field Modifications */
+.signup-form .input-field input::-webkit-input-placeholder {
+  text-transform: uppercase;
+}
+.signup-form .input-field input::-moz-placeholder {
+  text-transform: uppercase;
+}
+.signup-form .input-field input:-ms-input-placeholder {
+  text-transform: uppercase;
+}
+.signup-form .input-field input::-ms-input-placeholder {
+  text-transform: uppercase;
+}
+.signup-form .input-field input::placeholder {
+    text-indent: 2%;
+    text-transform: uppercase;
+}
+.signup-form .input-field input:focus {
+  border-color: #222;
+}
+.signup-form a.link {
+  text-decoration: none;
+  color: #747474;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-top: 20px;
+}
+.signup-form .action {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+}
+.signup-form .action button {
+  width: 100%;
+  border: none;
+  padding: 18px;
+  font-family: 'Roboto';
+  cursor: pointer;
+  text-transform: uppercase;
+  background: #e8e9ec;
+  color: #777;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0;
+  letter-spacing: 0.2px;
+  outline: 0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.signup-form .action button:hover {
+  background: #2d3b55;
+}
+.signup-form .action button {
+  background: #2d3b55;
+  color: #fff;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 4px;
+}
+.signup-form .action button:nth-child(2):hover {
+  background: #597bbb;
+}
