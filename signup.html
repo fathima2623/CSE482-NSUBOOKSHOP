@@ -5,13 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="loginstyle.css">
+    <link rel="stylesheet" href="signupstyle.css">
     <title>Document</title>
 </head>
-
 <body>
-  <!-- Header Section -->
-
     <header>
            <img src="https://seeklogo.com/images/N/north-south-university-logo-0CA3A4611D-seeklogo.com.png">
             <nav>
@@ -23,27 +20,33 @@
                 </ul>
             </nav>
         </header>
-    
-<!-- Login Section -->
-<div class="login-form">
+
+<!-- Signup Section -->
+<div class="signup-form">
   <form>
-    <h1>Login</h1>
+    <h1>Signup</h1>
     <div class="content">
+      <!-- Name, Contact, email password -->
+      <div class="input-field">
+        <input type="name" placeholder="Full Name" autocomplete="nope">
+      </div>
+      <div class="input-field">
+        <input type="tel" placeholder="Contact Number" autocomplete="nope">
+      </div>
       <div class="input-field">
         <input type="email" placeholder="Email" autocomplete="nope">
       </div>
       <div class="input-field">
         <input type="password" placeholder="Password" autocomplete="new-password">
       </div>
-      <a href="#" class="link">Forgot Your Password?</a>
+      <div class="input-field">
+        <input type="password" placeholder="Confirm Password" autocomplete="new-password">
+      </div>
     </div>
     <div class="action">
-      <button><a href="register.html">Signup</a></button>
-      <button>Sign in</button>
+      <button>Signup</button>
     </div>
   </form>
 </div>
-
-
 </body>
 </html>

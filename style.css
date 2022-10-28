@@ -14,7 +14,6 @@ section{
 }
 
 section nav .logo{
-
 float: left;
 margin-left: 20px;
 }
@@ -29,10 +28,9 @@ font-weight: bold;}
 section nav{
   width: 100%;
   display: block;
- 
   box-shadow: 0 0 10px #089da1;
   /* background: #fff; */
-  background:black;
+  background:#0F172A;
   position: fixed;
   left: 0;
   z-index: 100;
@@ -42,6 +40,14 @@ section nav .logo img{
   width: 100px;
   cursor: pointer;
   margin: 8px 0;
+}
+
+section nav .logo span{
+  vertical-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  color: white;
+  vertical-align: 40px;
+  font-size: 30px;
 }
 
 section nav ul{
