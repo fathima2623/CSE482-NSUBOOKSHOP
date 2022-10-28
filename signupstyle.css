@@ -26,12 +26,12 @@ body {
 
 /* Signup form content */
 .signup-form .content {
-  padding: 35px;
+  padding: 30px;
   text-align: center;
 }
 
 .signup-form .input-field {
-  padding: 12px 5px;
+  padding: 10px 5px;
 }
 
 .signup-form .input-field input {
@@ -39,7 +39,7 @@ body {
   display: block;
   font-family: 'Roboto';
   width: 100%;
-  padding: 10px 1px;
+  padding: 8px 1px;
   border: 0;
   border-radius: 4px;
   border-bottom: 1px solid #747474;
