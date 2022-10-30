@@ -49,18 +49,7 @@ body {
 }
 
 /* Login Text Field Modifications */
-.signup-form .input-field input::-webkit-input-placeholder {
-  text-transform: uppercase;
-}
-.signup-form .input-field input::-moz-placeholder {
-  text-transform: uppercase;
-}
-.signup-form .input-field input:-ms-input-placeholder {
-  text-transform: uppercase;
-}
-.signup-form .input-field input::-ms-input-placeholder {
-  text-transform: uppercase;
-}
+
 .signup-form .input-field input::placeholder {
     text-indent: 2%;
     text-transform: uppercase;
@@ -107,6 +96,11 @@ body {
   color: #fff;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 4px;
+}
+.signup-form .action button a {
+  color: #fff;
+  text-decoration: none;
+
 }
 .signup-form .action button:nth-child(2):hover {
   background: #597bbb;

@@ -17,27 +17,31 @@
          </ul>
      </nav>
  </header>
-	
-	<div class = "payment-page">
-		<h1 class ="p"> PAYMENT </h1>
-		<form action ="#" method ="post">
-			<p class = "nsu"> NSU ID </p>
-			<input type="number" name="nsuid" placeholder="NSU ID">
-			<p class ="nsu"> Bookshop ID </p>
-			<input type="number" name="bsid" placeholder="Bookshop ID">
-			<p class = "nsu"> Bkash </p>
-			<input type="number" name="bkashid" placeholder="Bkash">
-			<p class = "nsu"> TRLX </p>
-			<input type="text" name="trlxid" placeholder="TRLX">
-			<p class = "nsu"> Email </p>
-			<input type="email" name="emailid" placeholder="Email">
-			
 
-		</form>
-
-		<button class="pay" type="button">Pay Now</button>
-
-	</div>
+<div class="payment-form">
+  <form>
+    <h1>Payment</h1>
+    <div class="content">
+		<div class="input-field">
+        <input type="text" placeholder="NSU ID" autocomplete="nope">
+      	</div>
+		<div class="input-field">
+        <input type="text" placeholder="BOOKSHOP ID" autocomplete="nope">
+      	</div>
+		<div class="input-field">
+        <input type="text" placeholder="BKASH ID" autocomplete="nope">
+      	</div>
+		<div class="input-field">
+        <input type="text" placeholder="TRANSACTION ID" autocomplete="nope">
+      	</div>
+		<div class="input-field">
+        <input type="email" placeholder="Email ID" autocomplete="nope">
+      	</div>
+    </div>
+    <div class="action">
+      <button class="pay" type="button">Pay Now</button>
+    </div>
+  </form>
 </body>
 </html>
 
