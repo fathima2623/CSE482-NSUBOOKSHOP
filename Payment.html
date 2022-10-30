@@ -1,52 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Payment Page </title>
-	<link rel="stylesheet" href="paymentstyle.css">
+	<title> Payment Section </title>
+	<link rel="stylesheet" href="rifat.css">
 </head>
 
 <body>
+  <header>
+    <img src="https://seeklogo.com/images/N/north-south-university-logo-0CA3A4611D-seeklogo.com.png">
+     <nav>
+         <ul>
+             <li><a href="Home.html">HOME</a></li>
+             <li><a href="login.html">LOGIN</a></li>
+             <li><a href="signup.html">SIGNUP</a></li>
+             <li><a href="about.html">ABOUT</a></li>
+         </ul>
+     </nav>
+ </header>
+	
+	<div class = "payment-page">
+		<h1 class ="p"> PAYMENT </h1>
+		<form action ="#" method ="post">
+			<p class = "nsu"> NSU ID </p>
+			<input type="number" name="nsuid" placeholder="NSU ID">
+			<p class ="nsu"> Bookshop ID </p>
+			<input type="number" name="bsid" placeholder="Bookshop ID">
+			<p class = "nsu"> Bkash </p>
+			<input type="number" name="bkashid" placeholder="Bkash">
+			<p class = "nsu"> TRLX </p>
+			<input type="text" name="trlxid" placeholder="TRLX">
+			<p class = "nsu"> Email </p>
+			<input type="email" name="emailid" placeholder="Email">
+			
 
-	<h1> Payment form </h1>
+		</form>
 
+		<button class="pay" type="button">Pay Now</button>
 
-
-
-  <form>
-    <label for="nsu_id">NSU ID</label>
-    
-    <input type="number" id="nsu_id" name="nsu_id">
-
-    <label  for="bsid">Bookshop ID</label>
-    <input type="number" id="bsid" name="bsid">
-
- </form>
-
- <form>
-
- 	<label style="padding-right: 14px" for="bkash">Bkash</label>
-    <input type="number" placeholder="Enter Bkash" name="bkash" id="bkash">
-
-    <label style="padding-right: 85px" for="bkash">TRLX</label>
-    <input type="number" placeholder="Enter TRLX" name="trlx" id="trlx">
-
-    
-</form>
-
-<form>
-
-	 <label style="padding-right: 20px" for="email">Email</label>
-     <input type="text" id="email" name="email"><br>
-
-     <button type="button">Pay</button>
-
- </form>
-
-
-
-
- 
+	</div>
 </body>
 </html>
+
+
 
 
