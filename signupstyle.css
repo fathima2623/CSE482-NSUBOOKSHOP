@@ -105,3 +105,15 @@ body {
 .signup-form .action button:nth-child(2):hover {
   background: #597bbb;
 }
+footer {
+  text-align: center;
+  color: white;
+  height: 150px;
+}
+
+footer p{
+ padding: 60px;
+ border-top: 1px solid #e1e1e1;
+ background: #0F1A50;
+ color: #e1e1e1;
+}

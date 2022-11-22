@@ -255,3 +255,15 @@ td button {
 .cart:hover {  
   cursor: pointer;
 }
+footer {
+  text-align: center;
+  color: white;
+  height: 150px;
+}
+
+footer p{
+ padding: 60px;
+ border-top: 1px solid #e1e1e1;
+ background: #0F1A50;
+ color: #e1e1e1;
+}
