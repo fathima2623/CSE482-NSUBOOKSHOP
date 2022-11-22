@@ -96,7 +96,7 @@ a:link {
   text-decoration: none;
 }
 .login-form .action button:hover {
-  background: #fff;
+  background: #465c86;
 }
 .login-form .action button:nth-child(2) {
   background: #2d3b55;
