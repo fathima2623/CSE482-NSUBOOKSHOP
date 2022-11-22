@@ -24,16 +24,21 @@
     </header>
     <h3 style="font-family: Trebuchet MS;">Add Book</h3>
     <div>
-        <form action=#>
+        <form action="process-addbook.php" method="POST" >
           <label for="bname">Book Name</label>
           <input type="text" id="bname" name="bookname" placeholder="Book name..">
 
           <label for="edition">Edition</label>
-          <input type="text" id="ed" name="edition" placeholder="Edition(if any)">
+          <input type="text" id="ed" name="ed" placeholder="Edition(if any)">
           
           <label for="price">Price</label>
           <input type="text" id="price" name="price" placeholder="Enter Amount(if any)">
           
+          <label for="course">Course</label>
+          <input type="text" id="ed" name="course" placeholder="Course(if any)">
+
+          <label for="picture">picture</label>
+          <input type="text" id="picture" name="picture" placeholder="picture(if any)">
           
           <input type="submit" value="Submit">
         </form>
