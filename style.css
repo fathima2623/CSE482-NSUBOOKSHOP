@@ -418,7 +418,21 @@ footer p{
   }
   
   footer{
-    clear: left;
+    box-sizing: border-box;
+    background-color: #0F1A50;
+    display: block;
+    float: left;
+  }
+  
+  footer .div-one {
+    box-sizing: border-box;
+    width: 30%;
+  }
+
+  footer .div-two{
+    box-sizing: border-box;
+    width: 60%;
+    height: auto;
   }
 
   .services{
