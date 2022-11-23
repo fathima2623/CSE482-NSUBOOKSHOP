@@ -165,7 +165,7 @@ section .main .main_img img{
 .featured_boks{
   width: 100%;
   height: 100vh;
-  padding: 70px 0;
+  padding: 70px 0px 0px 0px;;
 }
 
 .featured_boks h1{
@@ -352,6 +352,32 @@ footer p{
  color: #e1e1e1;
 }
 
+.contact-section {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  background: #0F1A50;
+  height: 450px;
+}
+.contact-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+}
+.contact-right {
+  position: absolute;
+  right: 0;
+  top: 40px;
+  padding-bottom:0px ;
+  width: 45%;
+  height: 80%;
+  
+}
+.contact-right iframe {
+  height: 100%;
+}
+
 @media only screen and (max-width: 600px) {
   
 
@@ -417,24 +443,7 @@ footer p{
     padding-right: 30px;
   }
   
-  footer{
-    box-sizing: border-box;
-    background-color: #0F1A50;
-    display: block;
-    float: left;
-  }
-  
-  footer .div-one {
-    box-sizing: border-box;
-    width: 30%;
-  }
-
-  footer .div-two{
-    box-sizing: border-box;
-    width: 60%;
-    height: auto;
-  }
-
+ 
   .services{
     display: block;
     float: none;
@@ -443,3 +452,4 @@ footer p{
     margin-top: 900px;
   }
 }
+
