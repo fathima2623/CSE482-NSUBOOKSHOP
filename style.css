@@ -348,7 +348,7 @@ footer {
 footer p{
  padding: 640px;
  border-top: 1px solid #e1e1e1;
- background: #0F1A50;
+ background: #0F172A;
  color: #e1e1e1;
 }
 
@@ -356,7 +356,7 @@ footer p{
   position: relative;
   margin-top: 0;
   padding-top: 0;
-  background: #0F1A50;
+  background: #0F172A;
   height: 300px;
 }
 .contact-section .container {
@@ -368,15 +368,14 @@ footer p{
 .contact-right {
   position: absolute;
   right: 0;
-  top: 30%;
-  padding-bottom:0px ;
+  top: 25%;
+  padding-bottom:30px ;
   width: 45%;
-  height: 80%;
+  height: 85%;
   
 }
 .contact-right iframe {
-  height: 60%;
-  width: 60%;
+  height: 85%;
 }
 
 #footer {

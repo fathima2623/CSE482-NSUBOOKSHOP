@@ -172,6 +172,47 @@ if (isset($_SESSION["user_id"])) {
   text-decoration: none;
   color: #000;
 }
+.contact-section {
+  position: relative;
+  margin-top: 0;
+  padding-top: 0;
+  background: #0F1A50;
+  height: 300px;
+}
+.contact-section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: white;
+}
+.contact-right {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  padding-bottom:0px ;
+  width: 45%;
+  height: 80%;
+  
+}
+.contact-right iframe {
+  height: 60%;
+  width: 60%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             @media screen and (max-width: 600px) {
   
   section {
@@ -296,6 +337,22 @@ if (isset($_SESSION["user_id"])) {
   </div>
 
        
+    </section>
+    <section class="contact-section">
+        <div class="container">
+            <div id="footer" class="contact-left">
+                <p><span>&#169;</span> North South University<br>
+                    Bashundhara R/A, Dhaka 1229 <br>
+                    Developed &amp; Maintained by NSU <br>
+            </div>
+            <div class="contact-right">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14600.375809958237!2d90.4255164!3d23.8152579!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ffe0291c76596c8!2sNSU%20Book%20Shop!5e0!3m2!1sen!2sbd!4v1669175017412!5m2!1sen!2sbd"
+                    width="600" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+
+        </div>
     </section>
 </body>
 </html>
