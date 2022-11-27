@@ -71,3 +71,18 @@
             </div>
     </body>
 </html>
+<?php
+require('config.php');
+?>
+<form style=""action="submit.php" method="post">
+	<script
+		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+		data-key="<?php echo $publishablekey?>"
+		data-amount="1000"
+		data-name="NSU Bookshop"
+		data-description="Book name"
+		data-currency="usd"
+	>
+	</script>
+
+</form>
