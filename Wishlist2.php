@@ -62,7 +62,6 @@
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">BDT 0</span>
             </div>
-            <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
         </section>
         
                         </a>
@@ -74,7 +73,7 @@
 <?php
 require('config.php');
 ?>
-<form style=""action="submit.php" method="post">
+<form action="submit.php" method="post">
 	<script
 		src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 		data-key="<?php echo $publishablekey?>"
@@ -82,7 +81,13 @@ require('config.php');
 		data-name="NSU Bookshop"
 		data-description="Book name"
 		data-currency="usd"
+        data-label="Proceed to Pay with Card"
 	>
 	</script>
-
+    <script>
+        // Hide default stripe button, be careful there if you
+        // have more than 1 button of that class
+        document.getElementsByClassName("stripe-button-el")[0].style.display = 'none';
+    </script>
+    <button type="submit" class="btn btn-primary btn-purchase">Buy with card</button>
 </form>

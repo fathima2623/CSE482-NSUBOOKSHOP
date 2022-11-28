@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NSU Bookshop</title>
+        <link rel="stylesheet" href="rifat2.css" />
+        <script src="store.js" async></script>
+    </head>
+	<body>
+</body>
+</html>	
 <?php
 require('config.php');
 if(isset($_POST['stripeToken'])){
@@ -6,7 +16,7 @@ if(isset($_POST['stripeToken'])){
 	$token=$_POST['stripeToken'];
 
 	$data=\Stripe\Charge::create(array(
-		"amount"=>1000,
+		"amount"=>"1000",
 		"currency"=>"usd",
 		"description"=>"Book Name",
 		"source"=>$token,
@@ -15,7 +25,5 @@ if(isset($_POST['stripeToken'])){
 	echo "<h1>Thanks for your order, your payment is successful</h1>";
 	#echo "<pre>";
 	#print_r($data);
-
-
 }
 ?>
