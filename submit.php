@@ -10,9 +10,12 @@ if(isset($_POST['stripeToken'])){
 		"currency"=>"usd",
 		"description"=>"Book Name",
 		"source"=>$token,
+		#"success_url"=>'dashboard.html',
 	));
+	echo "<h1>Thanks for your order, your payment is successful</h1>";
+	#echo "<pre>";
+	#print_r($data);
 
-	echo "<pre>";
-	print_r($data);
+
 }
 ?>
