@@ -198,6 +198,7 @@ th,td {
   padding: 10px 40px 10px;
   font-size: 12px;
   color: white;
+  
 
 }
 
@@ -211,11 +212,15 @@ td img {
 
 td button {
   border: none;
-  padding: 7px 20px;
+  padding: 8px 20px;
   border-radius: 20px;
   background-color: black;
-  color: #e6e7e8;
+  color: yellow;
+  float: right;
+  
 }
+
+
 
 .cart:hover {
   cursor: pointer;
@@ -244,12 +249,35 @@ td img {
 }
 
 
-td button {
+td .add {
   border: none;
   padding: 7px 20px;
   border-radius: 20px;
-  background-color: black;
-  color: #e6e7e8;
+  background-color: rgb(0, 0, 0);
+  color: #c6fd00;
+}
+
+td .remove {
+
+  border: none;
+  padding: 7px 20px;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  color: #ff3300;
+
+}
+
+.book {
+
+  border: none;
+  padding: 20px 20px 20px 20px;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  color: #0173f5;
+  float: right;
+ 
+
+
 }
 
 .cart:hover {  
@@ -262,34 +290,8 @@ footer {
 }
 
 footer p{
- padding: 640px;
+ padding: 60px;
  border-top: 1px solid #e1e1e1;
- background: #0F172A;
+ background: #0F1A50;
  color: #e1e1e1;
-}
-
-.contact-section {
-  position: relative;
-  margin-top: 0;
-  padding-top: 0;
-  background: #0F172A;
-  height: 300px;
-}
-.contact-section .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: white;
-}
-.contact-right {
-  position: absolute;
-  right: 0;
-  top: 25%;
-  padding-bottom:30px ;
-  width: 45%;
-  height: 85%;
-  
-}
-.contact-right iframe {
-  height: 85%;
 }
