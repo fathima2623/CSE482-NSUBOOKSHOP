@@ -46,6 +46,14 @@
                         <button class="btn btn-primary shop-item-button" type="button">Cart</button>
                     </div>
                 </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Rich Dad Poor Dad</span>
+                    <img class="shop-item-image" src=https://static-01.daraz.com.bd/p/1c1f8e3394ffb3b22f5af8d2c9ee7580.jpg">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price"> 350 BDT</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Cart</button>
+                    </div>
+                </div>
                 </div>
             </div>
         </section>
