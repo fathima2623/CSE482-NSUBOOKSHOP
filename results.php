@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["user_id"])) {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = "SELECT * FROM user
+            WHERE id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+
+    $cookie_name = "user";
+     
+    $cookie_value = $user["fullname"];
+
+    setcookie($cookie_name,$cookie_value, time()+86400,"/");
+} ?>
 <!DOCTYPE html>
 <html lang="en">
 <head> 
@@ -257,7 +278,21 @@ margin-top: 5px;
 }
 
 </style>
+<script>
+$(document).ready(function(){
+$("#search").on("keyup",function(){
+       var search_term = $(this).val();
 
+       $.ajax({
+         url: "gethint.php",
+         type: "POST",
+         data : {search:search_term },
+         success: function(data) {
+           $("#table-data").html(data);
+         }
+       });
+     })});
+</script>
 </head>
 <body>
     <section>
@@ -268,14 +303,25 @@ margin-top: 5px;
             </div>
     
             <ul>
-              <li><a href="Home.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="search.html">Search</a></li>
-              <li><a href="profile.html">Profile</a></li>
-              <li><a href="checkout.html"></a>Cart</li>
-              <li><a href="Wishlist.html"></a>Wishlist</li>
-          </ul>
-  
+            <?php if(isset($user)) : 
+                    
+                    if ($user["type"]=="admin"): ?>
+                    
+                    <li><a href="Orders.php">Check Orders</a></li>
+                    <li><a href="wishlist.php">Edit Book catalogue</a></li>
+                    <li><a href="profile.php"><?= htmlspecialchars($user["fullname"]) ?></a></li>
+                    <li><a href="logout.php">Log out</a></li>
+                    <?php else: ?>
+                    <li><a href="index.php">Dashboard</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="results.php">Search</a></li>
+                    <li><a href="wishlist2.php">cart</a></li>
+                    <li><a href="profile.php"><?= htmlspecialchars($user["fullname"]) ?></a></li>
+                    <?php endif; ?>
+                <?php else : ?>
+                    <li><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></li> 
+                <?php  endif; ?>
+            </ul>
     
             
     
@@ -286,21 +332,22 @@ margin-top: 5px;
 
    
       <div class="search">
-        <form action="product.html">
-        <input type="text" class="" placeholder="What are you looking for?">
+        <form >
+        <input type="text" id="search" placeholder="What are you looking for?">
         <button type="submit" class="searchButton">
           <i class="fa fa-search"></i>
        </button>
-       </form>
+       </form> <br><br>
+       <p>Suggestions: <span id="table-data"></span></p>
      </div>
    
-     
+<!--      
       <div class="courses">
         <h1>Courses</h1>
     
-        <div class="courses_box">
+        <div class="courses_box"> -->
     
-            <div class="courses_card">
+            <!-- <div class="courses_card">
                 <div class="courses_image">
                    <img src="https://dev.java/assets/images/java-logo-vert-blk.png" alt="">
                 </div>
@@ -310,131 +357,11 @@ margin-top: 5px;
                     
                     <a href="product.html" class="courses_btn">Search</a>
                 </div>
-            </div>
+            </div> -->
     
-            <div class="courses_card">
-                <div class="courses_image">
-                   <img src="https://www.mheducation.co.in/media/catalog/product/cache/84c63a40cf0771f03c9446b22a7e0f08/9/7/9789389811988.jpeg" alt="">
-                </div>
-                <div class="courses_tag">
-                    <h3>FIN433</h3>
-                    <p>Financial Markets and Institutions</p>
-                    
-                    <a href="product.html" class="courses_btn">Search</a>
-                </div>
-            </div>
-    
-            <div class="courses_card">
-                <div class="courses_image">
-                   <img src="https://m.media-amazon.com/images/I/51pL7oinmVL._SX320_BO1,204,203,200_.jpg" alt="">
-                </div>
-                <div class="courses_tag">
-                    <h3> ACT370 </h3>
-                    <p>Taxation</p>
-                    
-                    <a href="#" class="courses_btn">Search</a>
-                </div>
-            </div>
-    
-            <div class="courses_card">
-                <div class="courses_image">
-                   <img src="https://pandorafms.com/blog/wp-content/uploads/2018/05/what-is-an-algorithm-featured.png" alt="">
-                </div>
-                <div class="courses_tag">
-                    <h3>CSE373</h3>
-                    <p>Algorithms</p>
-                    
-                    <a href="#" class="courses_btn">Search</a>
-                </div>
-            </div>
-    
-            <div class="courses_card">
-                <div class="courses_image">
-                   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-                </div>
-                <div class="courses_tag">
-                    <h3>MAT125</h3>
-                    <p>Linear Algebra</p>
-                    
-                    <a href="#" class="courses_btn">Search</a>
-                </div>
-            </div>
+  
 
-            <div class="courses_card">
-              <div class="courses_image">
-                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-              </div>
-              <div class="courses_tag">
-                  <h3>MAT125</h3>
-                  <p>Linear Algebra</p>
-                  
-                  <a href="#" class="courses_btn">Search</a>
-              </div>
-          </div>
-          <div class="courses_card">
-            <div class="courses_image">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-            </div>
-            <div class="courses_tag">
-                <h3>MAT125</h3>
-                <p>Linear Algebra</p>
-                
-                <a href="#" class="courses_btn">Search</a>
-            </div>
-        </div>
-        <div class="courses_card">
-          <div class="courses_image">
-             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-          </div>
-          <div class="courses_tag">
-              <h3>MAT125</h3>
-              <p>Linear Algebra</p>
-              
-              <a href="#" class="courses_btn">Search</a>
-          </div>
-      </div>
-      <div class="courses_card">
-        <div class="courses_image">
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-        </div>
-        <div class="courses_tag">
-            <h3>MAT125</h3>
-            <p>Linear Algebra</p>
-            
-            <a href="#" class="courses_btn">Search</a>
-        </div>
-    </div>
-    <div class="courses_card">
-      <div class="courses_image">
-         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-      </div>
-      <div class="courses_tag">
-          <h3>MAT125</h3>
-          <p>Linear Algebra</p>
-          
-          <a href="#" class="courses_btn">Search</a>
-      </div>
-  </div>
-  <div class="courses_card">
-    <div class="courses_image">
-       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjdBGj7n8A2Mg-RyhAFcY8IKhsQYTybh4oAg&usqp=CAU" alt="">
-    </div>
-    <div class="courses_tag">
-        <h3>MAT125</h3>
-        <p>Linear Algebra</p>
-        
-        <a href="#" class="courses_btn">Search</a>
-    </div>
-</div>
-
-    
-            
-    
-        
-    
-          
-    
-        </div>
+     </div>
     
     </div>
      

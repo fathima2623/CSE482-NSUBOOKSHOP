@@ -4,7 +4,7 @@
     background-color: #1B2640
 }
 header {
-  background-color: #0F172A;    
+  background-color: #1B2640;    
   position: fixed;
   top: 0;
   left: 0;
@@ -51,6 +51,54 @@ body {
   padding: 30px;
 }
 
+nav .logo{
+          
+    float: left;
+    margin-left: 20px;
+    }
+    
+    nav ul{
+      float: right;
+      margin-top: 40px;
+      margin-right: 20px;
+    font-size: large;
+    font-weight: bold;}
+    
+    nav{
+      width: 100%;
+      display: block;
+     
+      box-shadow: 0 0 10px #089da1;
+      /* background: #fff; */
+      
+      position: fixed;
+      left: 0;
+      z-index: 100;
+    }
+    
+    nav .logo img{
+      width: 100px;
+      cursor: pointer;
+      margin: 8px 0;
+    }
+    
+    nav ul{
+      list-style: none;
+    }
+    
+    nav li{
+      display: inline-block;
+      padding: 0 10px;
+    
+    }
+    
+    nav li a{
+      text-decoration: none;
+      color: white;
+    }
+    
+    nav li a:hover{
+      color: #089da1;}
 
 
 .band-name {
@@ -206,9 +254,8 @@ body {
 }
 
 .shop-items {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display:flex;
+    
 }
 
 .cart-header {

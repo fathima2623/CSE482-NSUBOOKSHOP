@@ -1,11 +1,11 @@
 <?php
 
-
-
 $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
+    $remember = $_POST['remember'];
+  
     $mysqli = require __DIR__ . "/database.php";
     
     $sql = sprintf("SELECT * FROM user
@@ -15,7 +15,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $mysqli->query($sql);
     
     $user = $result->fetch_assoc();
-    
+
+
+    if($remember==1){
+      setcookie('uname', $_POST["email"], time()+60*60,"/");
+      setcookie('upass',$_POST["password"], time()+60*60,"/");
+
+    }
+     
     if ($user) {
         
         if (password_verify($_POST["password"], $user["password_hash"])) {
@@ -79,13 +86,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>LOG IN</h1>
     <div class="content">
       <div class="input-field">
-        <input type="email" placeholder="Email" id="email" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" autocomplete="nope">
+        <!-- <input type="email" placeholder="Email" id="email" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "") ?>" autocomplete="nope"> -->
+        <input type="email" placeholder="Email" id="email" name="email" value="<?php if(isset($_COOKIE['uname'])) echo $_COOKIE['uname'];?>" autocomplete="nope">
       </div>
       <div class="input-field">
-        <input type="password" placeholder="Password"  name="password" autocomplete="new-password">
+        <input type="password" placeholder="Password"  name="password" value="<?php if(isset($_COOKIE['upass'])) echo $_COOKIE['upass'];?>"autocomplete="new-password">
       </div>
-      <a href="#" class="link">Forgot Your Password?</a>
+     
     </div>
+    <div>
+    <input type="checkbox" name = "remember" value="1" >
+    <label for="checkbox" style="color:black">Remember me</label>
+        </div>
     <div class="action">
       <button><a href="signup.html">Signup</a></button>
       <button><a href="login.html"> Log In</a></button>

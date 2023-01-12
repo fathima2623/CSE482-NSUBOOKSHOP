@@ -353,7 +353,7 @@ footer p{
 }
 
 .contact-section {
-  position: relative;
+  position: fixed;
   margin-top: 0;
   padding-top: 0;
   background: #0F172A;

@@ -1,18 +1,10 @@
 <?php
 print_r($_POST); 
 
-
-if (empty($_POST["bookname"])) {
-    die("Book Name is required");
-}
-if (empty($_POST["price"])) {
-    die("Price is required");
-}
-
 $mysqli = require __DIR__ . "/database.php";
 
 
-$sql = "INSERT INTO book (bookname,ed,price,course,picture) VALUES(?,?,?,?,?)";
+$sql = "INSERT INTO book (bookname,ed,price,course,picture,description,location) VALUES(?,?,?,?,?,?,?)";
 $stmt = $mysqli->stmt_init();
 
 if(! $stmt->prepare($sql)){
@@ -20,12 +12,14 @@ if(! $stmt->prepare($sql)){
 }
 
 
-$stmt->bind_param("sssss",
+$stmt->bind_param("sssssss",
                   $_POST["bookname"],
                   $_POST["ed"],
                   $_POST["price"],
                   $_POST["course"],
-                  $_POST["picture"]);
+                  $_POST["picture"],
+                  $_POST["description"],
+                  $_POST["location"]);
 
                   if ($stmt->execute()) {
 
@@ -34,11 +28,9 @@ $stmt->bind_param("sssss",
                     
                 } else {
                     
-                    if ($mysqli->errno === 1062) {
-                        die("email already taken");
-                    } else {
+                 
                         die($mysqli->error . " " . $mysqli->errno);
-                    }
+                    
                 }
 
 // var_dump($password_hash);

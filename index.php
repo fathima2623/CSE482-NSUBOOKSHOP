@@ -29,6 +29,7 @@ if (isset($_SESSION["user_id"])) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
@@ -172,48 +173,7 @@ if (isset($_SESSION["user_id"])) {
   text-decoration: none;
   color: #000;
 }
-.contact-section {
-  position: relative;
-  margin-top: 0;
-  padding-top: 0;
-  background: #0F1A50;
-  height: 300px;
-}
-.contact-section .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: white;
-}
-.contact-right {
-  position: absolute;
-  right: 0;
-  top: 30%;
-  padding-bottom:0px ;
-  width: 45%;
-  height: 80%;
-  
-}
-.contact-right iframe {
-  height: 60%;
-  width: 60%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            @media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
   
   section {
     display: block;
@@ -241,6 +201,22 @@ if (isset($_SESSION["user_id"])) {
     color: #089da1;
   } }
     </style>
+    <script>
+
+    function myFunction(data) {
+       console.log(data);
+         $.ajax({
+          url: "wishlistprocess.php",
+          type: "POST",
+          data : { bookname : data ,
+                   username : "<?php echo $user["email"] ?>" },
+          success: function() {
+          alert("added to wishlist");
+          
+        }});
+        
+}
+</script>
 </head>
 <body>
     <section>
@@ -259,18 +235,20 @@ if (isset($_SESSION["user_id"])) {
                     
                     if ($user["type"]=="admin"): ?>
                     
-                    <li><a href="Orders.html">Check Orders</a></li>
-                    <li><a href="addbook.html">Edit Book catalogue</a></li>
+                   
+                    <li><a href="check-orders.php
+                    ">Check Orders</a></li>
+                    <li><a href="wishlist.php">Edit Book catalogue</a></li>
                     <li><a href="requestlist.html">Book request list</a></li>
-                    <li><a href="profile.html"><?= htmlspecialchars($user["fullname"]) ?></a></li>
+                    <li><a href="profile.php"><?= htmlspecialchars($user["fullname"]) ?></a></li>
                     <li><a href="logout.php">Log out</a></li>
                     <?php else: ?>
-                    <li><a href="Home.html">Home</a></li>
+                   
                     <li><a href="about.html">About</a></li>
-                    <li><a href="search.html">Search</a></li>
-                    <li><a href="profile.html">Profile</a></li>
-                    <li><a href="checkout.html">cart</a></li>
-                    <li><a href="Wishlist.html">Wishlist</a></li>
+                    <li><a href="results.php">Search</a></li>
+                    <li><a href="Wishlist2.php">cart</a></li>
+                    <li><a href="profile.php"><?= htmlspecialchars($user["fullname"]) ?></a></li>
+                    <li><a href="logout.php">Log out</a></li>
                     <?php endif; ?>
                 <?php else : ?>
                     <li><a href="login.php">Log in</a> or <a href="signup.html">sign up</a></li> 
@@ -287,7 +265,7 @@ if (isset($_SESSION["user_id"])) {
 
         <div class="featured_boks">
 
-          <h1>New added books!</h1>
+          <h1>NSU Book Shop</h1>
           <div class="featured_book_box">
 
 
@@ -295,19 +273,19 @@ if (isset($_SESSION["user_id"])) {
     
                  if(isset($user)){
 
-                 $sql = "SELECT bookname,ed,price,course,picture FROM book"; 
+                 $sql = "SELECT bookname,ed,price,course,picture FROM book WHERE location='nsubookshop'"; 
                  $result = mysqli_query($mysqli, $sql); 
  
                  if (mysqli_num_rows($result) > 0) { 
    
                        while($row = mysqli_fetch_assoc($result)) { ?>
 
-
+                       
 
                        <div class="featured_book_card">
   
                   <div class="featurde_book_img">
-                      <img src= <?= htmlspecialchars($row["picture"]) ?> >
+                      <img loading="lazy" src= <?= htmlspecialchars($row["picture"]) ?> >
                   </div>
   
                   <div class="featurde_book_tag">
@@ -315,7 +293,9 @@ if (isset($_SESSION["user_id"])) {
                       <p class="writer"><?= htmlspecialchars($row["ed"]) ?></p>
                       <div class="categories"><?= htmlspecialchars($row["course"]) ?></div>
                       <p class="book_price"><?= htmlspecialchars($row["price"]) ?><sub><del>150tk</del></sub></p>
-                      <a href="product.html" class="f_btn">Learn More</a>
+                      <!-- <a href="product.html" class="f_btn">Add to Wishlist</a> -->
+                    
+                      <button id="like" onclick='myFunction("<?php echo $row["bookname"] ?>")'>Add to Wishlist</button>
                   </div>
   
               </div>
@@ -323,7 +303,101 @@ if (isset($_SESSION["user_id"])) {
               <?php 
               
             } } else {  ?>
-                  <p> no results! </p>
+                  <p> add books! </p>
+            <?php
+            }} ?>
+
+              
+      </div>
+
+      <div class="featured_boks">
+
+          <h1>NSU Old Shop</h1>
+          <div class="featured_book_box">
+
+
+          <?php
+    
+                 if(isset($user)){
+
+                 $sql = "SELECT bookname,ed,price,course,picture FROM book WHERE location='nsuoldshop'"; 
+                 $result = mysqli_query($mysqli, $sql); 
+ 
+                 if (mysqli_num_rows($result) > 0) { 
+   
+                       while($row = mysqli_fetch_assoc($result)) { ?>
+
+                  
+
+                       <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img loading="lazy" src= <?= htmlspecialchars($row["picture"]) ?> >
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2><?= htmlspecialchars($row["bookname"]) ?></h2>
+                      <p class="writer"><?= htmlspecialchars($row["ed"]) ?></p>
+                      <div class="categories"><?= htmlspecialchars($row["course"]) ?></div>
+                      <p class="book_price"><?= htmlspecialchars($row["price"]) ?><sub><del>150tk</del></sub></p>
+                      <!-- <a href="product.html" class="f_btn">Add to Wishlist</a> -->
+                    
+                      <button id="like" onclick='myFunction("<?php echo $row["bookname"] ?>")'>Add to Wishlist</button>
+                  </div>
+  
+              </div>
+
+              <?php 
+              
+            } } else {  ?>
+                  <p> add books! </p>
+            <?php
+            }} ?>
+
+              
+      </div>
+
+      <div class="featured_boks">
+
+          <h1>KIC photocopy Center</h1>
+          <div class="featured_book_box">
+
+
+          <?php
+    
+                 if(isset($user)){
+
+                 $sql = "SELECT bookname,ed,price,course,picture FROM book WHERE location='kicphotocopycenter'"; 
+                 $result = mysqli_query($mysqli, $sql); 
+ 
+                 if (mysqli_num_rows($result) > 0) { 
+   
+                       while($row = mysqli_fetch_assoc($result)) { ?>
+
+                  
+
+                       <div class="featured_book_card">
+  
+                  <div class="featurde_book_img">
+                      <img loading="lazy" src= <?= htmlspecialchars($row["picture"]) ?> >
+                  </div>
+  
+                  <div class="featurde_book_tag">
+                      <h2><?= htmlspecialchars($row["bookname"]) ?></h2>
+                      <p class="writer"><?= htmlspecialchars($row["ed"]) ?></p>
+                      <div class="categories"><?= htmlspecialchars($row["course"]) ?></div>
+                      <p class="book_price"><?= htmlspecialchars($row["price"]) ?><sub><del>150tk</del></sub></p>
+                      <!-- <a href="product.html" class="f_btn">Add to Wishlist</a> -->
+                    
+                      <button id="like" onclick='myFunction("<?php echo $row["bookname"] ?>")'>Add to Wishlist</button>
+                  </div>
+  
+              </div>
+
+              <?php 
+              
+            } } else {  ?>
+                  <p> add books! </p>
             <?php
             }} ?>
 
@@ -338,23 +412,9 @@ if (isset($_SESSION["user_id"])) {
 
        
     </section>
-    <section class="contact-section">
-        <div class="container">
-            <div id="footer" class="contact-left">
-                <p><span>&#169;</span> North South University<br>
-                    Bashundhara R/A, Dhaka 1229 <br>
-                    Developed &amp; Maintained by NSU <br>
-            </div>
-            <div class="contact-right">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14600.375809958237!2d90.4255164!3d23.8152579!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ffe0291c76596c8!2sNSU%20Book%20Shop!5e0!3m2!1sen!2sbd!4v1669175017412!5m2!1sen!2sbd"
-                    width="600" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-            </div>
-
-        </div>
-    </section>
+   
 </body>
+
 </html>
     
     
